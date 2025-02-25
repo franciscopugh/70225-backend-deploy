@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userData = Object.fromEntries(formData) //Dado un objeto iterator me lo transforma en un objeto simple
       
         try {
-            const response = await fetch('http://localhost:8000/api/sessions/login', {
+            const response = await fetch('https://seven0225-backend-deploy.onrender.com/api/sessions/login', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const data = await response.json()
             if(data?.message == "Usuario logueado correctamente") {
-                window.location.href = "http://localhost:8000/api/products"
+                window.location.href = "https://seven0225-backend-deploy.onrender.com/api/sessions/products"
             } else {
                 console.log(data)
             }
